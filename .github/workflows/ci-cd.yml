@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
 
     - name: Use Node.js
       uses: actions/setup-node@v4
@@ -20,17 +20,17 @@ jobs:
         node-version: 20
         cache: 'npm'
     - name: Install dependencies
-    - run: npm ci
+      run: npm ci
 
     - name: Run tests
-    - run: npm test || echo "No tests found, would add tests in a real project"
+      run: npm test || echo "No tests found, would add tests in a real project"
 
 lint:
   name: Static code analysis
   runs-on: ubuntu-latest
   steps:
   - name: Checkout code
-  - uses: actions/checkout@v4
+    uses: actions/checkout@v4
 
   - name: Use Node.js
     uses: actions/setup-node@v4
@@ -38,10 +38,10 @@ lint:
       node-version: 20
       cache: 'npm'
   - name: Install dependencies
-  - run: npm ci
+    run: npm ci
 
   - name: Run Eslint
-  - run: npm run lint
+    run: npm run lint
 
 # build:
 #   name: Build
